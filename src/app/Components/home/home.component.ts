@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  title: string;
 
+  constructor() {
+    this.title = 'Bienvenido a la Página de Inicio';
+  }
+
+  ngOnInit(): void {
+    // Puedes agregar lógica adicional que deba ejecutarse cuando se inicie el componente
+  }
 }

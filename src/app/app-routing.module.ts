@@ -17,6 +17,9 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
+  {
+    path: 'cliente', loadChildren: () => import('./cliente/cliente.module').then(m => m.ClienteModule)
+  },
 ];
 
 @NgModule({
