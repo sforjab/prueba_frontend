@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cliente-dashboard',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./cliente-dashboard.component.scss']
 })
 export class ClienteDashboardComponent {
+
+  constructor() { }
+
+  ngOnInit(): void { }
 
 }
