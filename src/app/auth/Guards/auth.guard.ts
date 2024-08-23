@@ -7,18 +7,18 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class RolGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    const expectedRoles = route.data['roles'] as Array<string>;
+    const rolesDefinidos = route.data['roles'] as Array<string>;
     return this.authService.rolUsuario.pipe(
       map(rolUsuario => {
         if (!rolUsuario) {
           this.router.navigate(['/login']);
           return false;
         }
-        if (!expectedRoles.includes(rolUsuario)) {
+        if (!rolesDefinidos.includes(rolUsuario)) {
           this.router.navigate(['/permiso-denegado']);
           return false;
         }

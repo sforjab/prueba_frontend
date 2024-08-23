@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
 /* import { HomeComponent } from './Components/home/home.component';
  */import { LoginComponent } from './auth/Components/login/login.component';
 import { RegistroComponent } from './auth/Components/registro/registro.component';
@@ -25,8 +27,11 @@ import { RegistroComponent } from './auth/Components/registro/registro.component
 /*     HeaderComponent,
  */  ],
   imports: [
+    NgModule,
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
+    AuthModule,
     ClienteModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
