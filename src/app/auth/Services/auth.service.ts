@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = `${environment.APIHost}/api/auth/login`;  // URL del backend para el login
+  private authUrl = `${environment.APIHost}api/auth/login`;  // URL del backend para el login
   usuarioActualLogin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   usuarioActualRol: BehaviorSubject<string> = new BehaviorSubject<string>('');
 

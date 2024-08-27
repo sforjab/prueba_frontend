@@ -13,8 +13,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 /* import { HomeComponent } from './Components/home/home.component';
- */import { LoginComponent } from './auth/Components/login/login.component';
-import { RegistroComponent } from './auth/Components/registro/registro.component';
+import { LoginComponent } from './auth/Components/login/login.component';
+import { RegistroComponent } from './auth/Components/registro/registro.component'; */
 /* import { HeaderComponent } from './Components/header/header.component';
  */import { ClienteModule } from './cliente/cliente.module';
 
@@ -22,12 +22,11 @@ import { RegistroComponent } from './auth/Components/registro/registro.component
   declarations: [
     AppComponent,
 /*     HomeComponent,
- */    LoginComponent,
-    RegistroComponent,
+ */    /* LoginComponent,
+    RegistroComponent, */
 /*     HeaderComponent,
  */  ],
   imports: [
-    NgModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,

@@ -9,14 +9,14 @@ import { LoginRequestDTO } from '../../Models/login-request.dto';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email: string = '';
+  username: string = '';
   password: string = '';
   mensajeError: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    const datosLogin = new LoginRequestDTO(this.email, this.password);
+    const datosLogin = new LoginRequestDTO(this.username, this.password);
     this.authService.login(datosLogin).subscribe({
       next: (response) => {
         const rolUsuario = sessionStorage.getItem('rol');
