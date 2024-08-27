@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 /* import { HomeComponent } from './Components/home/home.component'; */
 import { LoginComponent } from './auth/Components/login/login.component';
 import { RegistroComponent } from './auth/Components/registro/registro.component';
-import { ClienteDashboardComponent } from './cliente/Components/cliente-dashboard/cliente-dashboard.component';
+import { ClienteDashboardComponent } from './usuarios/cliente/Components/cliente-dashboard/cliente-dashboard.component';
 import { AuthGuard } from './auth/Guards/auth.guard';
 
 const routes: Routes = [
@@ -38,7 +38,7 @@ const routes: Routes = [
     component: RegistroComponent,
   },
   {
-    path: 'cliente', loadChildren: () => import('./cliente/cliente.module').then(m => m.ClienteModule)
+    path: 'cliente', loadChildren: () => import('./usuarios/cliente/cliente.module').then(m => m.ClienteModule)
   }
 ];
 

@@ -16,7 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { LoginComponent } from './auth/Components/login/login.component';
 import { RegistroComponent } from './auth/Components/registro/registro.component'; */
 /* import { HeaderComponent } from './Components/header/header.component';
- */import { ClienteModule } from './cliente/cliente.module';
+ */import { ClienteModule } from './usuarios/cliente/cliente.module';
 
 @NgModule({
   declarations: [
