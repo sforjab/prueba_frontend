@@ -12,20 +12,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
-/* import { HomeComponent } from './Components/home/home.component';
-import { LoginComponent } from './auth/Components/login/login.component';
-import { RegistroComponent } from './auth/Components/registro/registro.component'; */
-/* import { HeaderComponent } from './Components/header/header.component';
- */import { ClienteModule } from './usuarios/cliente/cliente.module';
+import { ClienteModule } from './usuarios/cliente/cliente.module';
+ import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-/*     HomeComponent,
- */    /* LoginComponent,
-    RegistroComponent, */
-/*     HeaderComponent,
- */  ],
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

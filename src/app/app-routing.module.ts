@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-/* import { HomeComponent } from './Components/home/home.component'; */
+import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './auth/Components/login/login.component';
 import { RegistroComponent } from './auth/Components/registro/registro.component';
 import { ClienteDashboardComponent } from './usuarios/cliente/Components/cliente-dashboard/cliente-dashboard.component';
 import { AuthGuard } from './auth/Guards/auth.guard';
 
 const routes: Routes = [
-  /* {
+  {
     path: '',
     component: HomeComponent,
-  }, */
+  },
   {
     path: 'login',
     component: LoginComponent,

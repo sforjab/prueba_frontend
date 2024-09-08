@@ -30,12 +30,12 @@ export class AuthService {
     );
   }
 
-  logout(): void {
+  /* logout(): void {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("rol");
     this.usuarioActualLogin.next(false);
     this.usuarioActualRol.next('');
-  }
+  } */
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let mensajeError = '¡Ha ocurrido un error desconocido!';

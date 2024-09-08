@@ -35,4 +35,9 @@ export class LoginComponent {
       }
     });
   }
+
+  // Método para redirigir a la página de registro
+  navegarRegistro(): void {
+    this.router.navigate(['/registro']);
+  }
 }
