@@ -24,9 +24,9 @@ import { RouterModule } from '@angular/router';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule,          // Import Angular Material Input Module
-    MatFormFieldModule,      // Import Angular Material Form Field Module
-    MatButtonModule,         // Import Angular Material Button Module
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
     RouterModule
   ],
   providers: [

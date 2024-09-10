@@ -11,9 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
-import { ClienteModule } from './usuarios/cliente/cliente.module';
- import { HomeComponent } from './Components/home/home.component';
+/* import { AuthModule } from './auth/auth.module';
+import { ClienteModule } from './usuarios/cliente/cliente.module'; */
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { ClienteModule } from './usuarios/cliente/cliente.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    AuthModule,
-    ClienteModule,
+/*     AuthModule,
+    ClienteModule, */
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
