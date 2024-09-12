@@ -9,7 +9,7 @@
   
       <!-- Si el usuario está logueado, mostramos el botón "Logout" y el rol -->
       <div *ngIf="isLogged" class="user-info">
-        <span>{{ rolUsuario }}</span>
+        <span>{{ usuario?.username }}</span>
         <button mat-raised-button color="warn" (click)="logout()" class="logout-btn">Logout</button>
       </div>
     </div>

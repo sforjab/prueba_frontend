@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   isLogged: boolean = false;
   rolUsuario: string = '';
   usuario: Usuario | null = null;  // Detalles del usuario logueado
+  mensajeError: string = '';
 
   constructor(private authService: AuthService, private usuarioService: UsuarioService, private router: Router) {}
 
@@ -29,19 +30,19 @@ export class HeaderComponent implements OnInit {
         this.obtenerDatosUsuario();
 
         // Obtenemos el rol del usuario logueado
-        this.authService.rolUsuario.subscribe(rol => {
+        /* this.authService.rolUsuario.subscribe(rol => {
           this.rolUsuario = rol;
-        });
+        }); */
       }
     });
   }
 
   navegarLogin(): void {
-    this.router.navigate(['/login']);  // Redirigimos a la ruta de login
+    this.router.navigate(['/auth/login']);  // Redirigimos a la ruta de login
   }
 
   // Método para obtener los datos del usuario logueado
-  obtenerDatosUsuario(): void {
+  /* obtenerDatosUsuario(): void {
     const token = this.authService.tokenUsuario;
     if (token) {
       const decodedToken: any = jwtDecode(token);  // Decodificamos el token
@@ -52,6 +53,24 @@ export class HeaderComponent implements OnInit {
         });
       }
     }
+  } */
+  /* obtenerDatosUsuario(): void {
+    this.usuarioService.getUsuarioLogueado().subscribe(usuario => {
+      this.usuario = usuario;  // Guardamos los datos del usuario
+    });
+  } */
+
+  obtenerDatosUsuario(): void {
+    this.usuarioService.getUsuarioLogueado().subscribe({
+      next: (usuario) => {
+        this.usuario = usuario;
+        console.log('Usuario obtenido:', usuario);
+      },
+      error: (err) => {
+        this.mensajeError = 'Error al obtener los datos del usuario';
+        console.error('Error al obtener usuario logueado:', err);
+      }
+    });
   }
 
   // Método para cerrar sesión

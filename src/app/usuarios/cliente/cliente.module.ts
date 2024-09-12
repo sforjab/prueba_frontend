@@ -5,6 +5,11 @@ import { ClienteRoutingModule } from './cliente-routing.module';
 import { ClienteDashboardComponent } from './Components/cliente-dashboard/cliente-dashboard.component';
 import { ClientePerfilComponent } from './Components/cliente-perfil/cliente-perfil.component';
 import { ClienteMascotasListComponent } from './Components/cliente-mascotas-list/cliente-mascotas-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +20,13 @@ import { ClienteMascotasListComponent } from './Components/cliente-mascotas-list
   ],
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    RouterModule
   ]
 })
 export class ClienteModule { }

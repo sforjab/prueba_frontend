@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -36,6 +36,16 @@ export class UsuarioService {
       tap(usuario => console.log('Usuario obtenido por nombre de usuario: ', usuario)),
       catchError(this.handleError)
     );
+  }
+
+  // Obtener el usuario logueado
+  getUsuarioLogueado(): Observable<Usuario> {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+        throw new Error('Token no encontrado');
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<Usuario>(`${this.usuarioUrl}/getUsuarioLogueado`, { headers });
   }
 
   // Crear un nuevo usuario
