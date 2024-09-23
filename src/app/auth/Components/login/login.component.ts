@@ -21,11 +21,11 @@ export class LoginComponent {
       next: (response) => {
         const rolUsuario = sessionStorage.getItem('rol');
         if (rolUsuario === 'CLIENTE') {
-          this.router.navigate(['/cliente/dashboard']);
+          this.router.navigate(['/cliente/']);
         } else if (rolUsuario === 'VETERINARIO') {
-          this.router.navigate(['/veterinario/dashboard']);  // Asegúrate de tener esta ruta definida
+          this.router.navigate(['/veterinario/']);  // Asegúrate de tener esta ruta definida
         } else if (rolUsuario === 'ADMIN') {
-          this.router.navigate(['/admin/dashboard']);  // Asegúrate de tener esta ruta definida
+          this.router.navigate(['/admin/']);  // Asegúrate de tener esta ruta definida
         } else {
           this.router.navigate(['/']);  // Ruta por defecto o home
         }

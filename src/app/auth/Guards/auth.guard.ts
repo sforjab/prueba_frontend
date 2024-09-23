@@ -11,18 +11,19 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    const rolesDefinidos = route.data['roles'] as Array<string>;
+    const rolesPermitidos = route.data['roles'] as Array<string>;
     return this.authService.rolUsuario.pipe(
       map(rolUsuario => {
-        if (!rolUsuario) {
+        if (!rolUsuario) { // No hay usuario logueado
           this.router.navigate(['/login']);
           return false;
         }
-        if (!rolesDefinidos.includes(rolUsuario)) {
+        if (rolesPermitidos && rolesPermitidos.length > 0 && !rolesPermitidos.includes(rolUsuario)) { // Los roles están definidos y el rol del usuario no está entre los permitidos
           this.router.navigate(['/permiso-denegado']);
           return false;
+
         }
-        return true;
+        return true; // Si el usuario está autenticado y no hay restricciones de roles, permite el acceso
       })
     );
   }

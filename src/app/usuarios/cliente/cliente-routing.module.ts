@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteDashboardComponent } from './Components/cliente-dashboard/cliente-dashboard.component';
 import { ClientePerfilComponent } from './Components/cliente-perfil/cliente-perfil.component';
-import { ClienteMascotasListComponent } from './Components/cliente-mascotas-list/cliente-mascotas-list.component';
+import { ClienteMascotasListComponent } from '../../mascota/Components/cliente-mascotas-list/cliente-mascotas-list.component';
 import { AuthGuard } from 'src/app/auth/Guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'dashboard', // Dashboard de cliente
+    path: '', // Dashboard de cliente
     component: ClienteDashboardComponent,
     canActivate: [AuthGuard],
     data: { roles: ['CLIENTE'] }
@@ -27,7 +27,6 @@ const routes: Routes = [
   // MIRAR QUÉ RUTAS LLEVAN GUARD O NO
   { 
     path: 'perfil', component: ClientePerfilComponent },        // Perfil del cliente
-  { path: 'mascotas', component: ClienteMascotasListComponent } // Lista de mascotas del cliente
 ];
 
 @NgModule({

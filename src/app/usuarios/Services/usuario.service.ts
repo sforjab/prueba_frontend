@@ -4,7 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Usuario } from '../Models/usuario.dto';
-import { Rol } from '../Models/usuario.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +43,8 @@ export class UsuarioService {
     if (!token) {
         throw new Error('Token no encontrado');
     }
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<Usuario>(`${this.usuarioUrl}/getUsuarioLogueado`, { headers });
+    /* const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); */
+    return this.http.get<Usuario>(`${this.usuarioUrl}/getUsuarioLogueado`/* , { headers } */);
   }
 
   // Crear un nuevo usuario

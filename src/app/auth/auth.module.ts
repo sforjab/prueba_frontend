@@ -5,8 +5,6 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './Components/login/login.component';
 import { RegistroComponent } from './Components/registro/registro.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './Services/auth-interceptor.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,12 +27,6 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     RouterModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
-  ]
+  providers: []
 })
 export class AuthModule { }

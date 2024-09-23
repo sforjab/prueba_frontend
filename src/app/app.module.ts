@@ -6,14 +6,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-/* import { AuthModule } from './auth/auth.module';
-import { ClienteModule } from './usuarios/cliente/cliente.module'; */
 import { HomeComponent } from './Components/home/home.component';
+import { AuthInterceptor } from './auth/Services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,6 @@ import { HomeComponent } from './Components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-/*     AuthModule,
-    ClienteModule, */
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
@@ -34,7 +31,13 @@ import { HomeComponent } from './Components/home/home.component';
     MatSelectModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
