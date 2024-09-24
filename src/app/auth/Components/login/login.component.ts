@@ -24,6 +24,8 @@ export class LoginComponent {
           this.router.navigate(['/cliente/']);
         } else if (rolUsuario === 'VETERINARIO') {
           this.router.navigate(['/veterinario/']);  // Asegúrate de tener esta ruta definida
+        } else if (rolUsuario === 'ADMIN_CLINICA,') {
+          this.router.navigate(['/admin-clinica/']);  // Asegúrate de tener esta ruta definida
         } else if (rolUsuario === 'ADMIN') {
           this.router.navigate(['/admin/']);  // Asegúrate de tener esta ruta definida
         } else {

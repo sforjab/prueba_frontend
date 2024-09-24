@@ -15,14 +15,14 @@ const routes: Routes = [
   {
     path: 'cliente', 
     loadChildren: () => import('./usuarios/cliente/cliente.module').then(m => m.ClienteModule),
-    canActivate: [AuthGuard],
-    data: { roles: ['CLIENTE'] } // Restringido solo para clientes
+    /* canActivate: [AuthGuard],
+    data: { roles: ['CLIENTE'] } // Restringido solo para clientes */
   },
   {
     path: 'veterinario', 
     loadChildren: () => import('./usuarios/veterinario/veterinario.module').then(m => m.VeterinarioModule),
-    canActivate: [AuthGuard],
-    data: { roles: ['VETERINARIO', 'ADMIN_CLINICA'] } // Restringido para veterinarios o admin de clínica
+   /*  canActivate: [AuthGuard],
+    data: { roles: ['VETERINARIO', 'ADMIN_CLINICA'] } // Restringido para veterinarios o admin de clínica */
   },
   /* {
     path: 'admin', 
@@ -33,26 +33,26 @@ const routes: Routes = [
   {
     path: 'mascota', 
     loadChildren: () => import('./mascota/mascota.module').then(m => m.MascotaModule),
-    canActivate: [AuthGuard],  // Cualquiera que esté autenticado puede acceder
-    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] }
+    /* canActivate: [AuthGuard],  // Cualquiera que esté autenticado puede acceder
+    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] } */
   },
   {
     path: 'prueba', 
     loadChildren: () => import('./prueba/prueba.module').then(m => m.PruebaModule),
-    canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
-    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] }
+    /* canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
+    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] } */
   },
   {
     path: 'consulta', 
     loadChildren: () => import('./consulta/consulta.module').then(m => m.ConsultaModule),
-    canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
-    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] }
+    /* canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
+    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] } */
   },
   {
     path: 'vacuna', 
     loadChildren: () => import('./vacuna/vacuna.module').then(m => m.VacunaModule),
-    canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
-    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] }
+    /* canActivate: [AuthGuard],  // Restringido solo para usuarios autenticados
+    data: { roles: ['CLIENTE', 'VETERINARIO', 'ADMIN', 'ADMIN_CLINICA'] } */
   },
 ];
 

@@ -39,4 +39,10 @@ export class MascotaDashboardComponent implements OnInit {
       state: { idMascota: this.idMascota }
     });
   }
+
+  navegarVacunas() {
+    this.router.navigate(['/vacuna/mascota-vacunas-list'], {
+      state: { idMascota: this.idMascota }
+    });
+  }
 }

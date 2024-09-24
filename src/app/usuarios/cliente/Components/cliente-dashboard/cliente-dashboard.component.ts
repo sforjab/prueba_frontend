@@ -15,7 +15,7 @@ export class ClienteDashboardComponent {
   }
 
   navegarMascotas() {
-    this.router.navigate(['/cliente/mascotas']);
+    this.router.navigate(['/mascota/cliente-mascotas-list']);
   }
 
 }
