@@ -4,6 +4,7 @@ import { ClienteDashboardComponent } from './Components/cliente-dashboard/client
 import { ClientePerfilComponent } from './Components/cliente-perfil/cliente-perfil.component';
 import { ClienteMascotasListComponent } from '../../mascota/Components/cliente-mascotas-list/cliente-mascotas-list.component';
 import { AuthGuard } from 'src/app/auth/Guards/auth.guard';
+import { GestionClientesComponent } from './Components/gestion-clientes/gestion-clientes.component';
 
 const routes: Routes = [
   {
@@ -25,8 +26,8 @@ const routes: Routes = [
     data: { roles: ['ADMIN'] }
   }, */
   // MIRAR QUÉ RUTAS LLEVAN GUARD O NO
-  { 
-    path: 'perfil', component: ClientePerfilComponent },        // Perfil del cliente
+  { path: 'perfil', component: ClientePerfilComponent },        // Perfil del cliente
+  { path: 'gestion-clientes', component: GestionClientesComponent } // Gestión del cliente
 ];
 
 @NgModule({

@@ -11,13 +11,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
+import { GestionClientesComponent } from './Components/gestion-clientes/gestion-clientes.component';
 
 
 @NgModule({
   declarations: [
     ClienteDashboardComponent,
     ClientePerfilComponent,
-    ClienteMascotasListComponent
+    ClienteMascotasListComponent,
+    GestionClientesComponent
   ],
   imports: [
     CommonModule,
